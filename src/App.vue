@@ -28,21 +28,24 @@ h1 {
   font-weight: bold;
 }
 
-a,
-.green {
-  text-decoration: none;
-  color: rgb(88, 0, 189);
-  transition: 0.4s;
-}
-
-@media (hover: hover) {
-  a:hover {
-    color: rgb(146, 79, 221);
-  }
-}
-
 body {
   display: flex;
   place-items: center;
+}
+
+.button {
+  border-radius: 2rem;
+  padding: 10px 50px;
+  box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.5);
+  background-color: rgb(52, 129, 201);
+  border: none;
+  margin: 10px auto;
+  display: block;
+}
+
+.button a {
+  color: var(--vt-c-white);
+  font-weight: 700;
+  text-decoration: none;
 }
 </style>
