@@ -48,4 +48,11 @@ body {
   font-weight: 700;
   text-decoration: none;
 }
+
+.button:hover {
+  cursor: pointer;
+  background-color: rgb(52, 107, 158);
+}
+
+.loader {}
 </style>
