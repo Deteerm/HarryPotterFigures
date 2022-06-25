@@ -1,11 +1,13 @@
 {
   "extends": "@vue/tsconfig/tsconfig.web.json",
-  "include": ["env.d.ts", "src/**/*", "src/**/*.vue", "test"],
+  "include": ["env.d.ts", "src/**/*", "src/**/*.vue", "test",],
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
       "@/*": ["./src/*"]
-    }
+    },
+    "types": ["mocha", "chai"],
+    "esModuleInterop": true,
   },
 
   "references": [
