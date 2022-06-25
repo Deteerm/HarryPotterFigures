@@ -1,11 +1,15 @@
 <script setup lang="ts">
-import Figure from "@/components/Figure.vue"
+import { RouterLink } from 'vue-router'
 </script>
 
 <template>
-  <main>
-    <Figure></Figure>
-    <Figure></Figure>
-    <Figure></Figure>
-  </main>
+  <section class="home-view">
+    <h1>LEGO MINIFIGS MYSTERY BOX</h1>
+    <button>
+      <RouterLink to="/figures">LET'S GO</RouterLink>
+    </button>
+  </section>
 </template>
+
+<style scoped>
+</style>

@@ -1,5 +1,5 @@
 <template>
-  FIGURKA
+
 </template>
 
 <script setup lang="ts">
