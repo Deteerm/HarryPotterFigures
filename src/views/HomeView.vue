@@ -1,9 +1,11 @@
 <script setup lang="ts">
-import TheWelcome from '@/components/TheWelcome.vue'
+import Figure from "@/components/Figure.vue"
 </script>
 
 <template>
   <main>
-    <TheWelcome />
+    <Figure></Figure>
+    <Figure></Figure>
+    <Figure></Figure>
   </main>
 </template>
