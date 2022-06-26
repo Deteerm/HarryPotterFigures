@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import FigureSummary from '@/components/FigureSummary.vue'
-import { onErrorCaptured, ref, type Ref, computed } from 'vue'
+import { ref, type Ref, computed } from 'vue'
 import fakeFetch from '@/utils/fakeFetch'
 import { useRouter } from 'vue-router'
 import { useStore } from '@/stores/figures'
