@@ -33,6 +33,11 @@ body {
   place-items: center;
 }
 
+.disabled {
+  opacity: 0.5;
+  pointer-events: none;
+}
+
 .button {
   border-radius: 2rem;
   padding: 10px 50px;
@@ -44,8 +49,8 @@ body {
   min-width: 168px;
 }
 
-.button a,
-.button span {
+a,
+.button {
   color: var(--vt-c-white);
   font-weight: 700;
   text-decoration: none;

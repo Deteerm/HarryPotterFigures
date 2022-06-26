@@ -25,6 +25,10 @@ const router = createRouter({
       // which is lazy-loaded when the route is visited.
       component: ShipmentView,
     },
+    {
+      path: "/:pathMatch(.*)*",
+      redirect: "/",
+    },
   ],
 });
 

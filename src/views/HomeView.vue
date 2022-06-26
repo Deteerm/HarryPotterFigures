@@ -37,7 +37,7 @@ const setIsLoading = (bool: boolean): void => {
   <section class="home-view">
     <div v-if="!isError">
       <h1>LEGO MINIFIGS MYSTERY BOX</h1>
-      <button @click="fetchFigures" class="button">
+      <button :disabled="isLoading" @click="fetchFigures" class="button">
         <div v-if="isLoading" class="lds-ellipsis">
           <div></div>
           <div></div>
@@ -49,7 +49,7 @@ const setIsLoading = (bool: boolean): void => {
     </div>
     <div v-else>
       <h1>THERE WAS AN ERROR WHILE TRYING TO FETCH YOUR FIGURES</h1>
-      <button @click="setIsLoading(true)" class="button"><a href="/">
+      <button :disabled="isLoading" @click="setIsLoading(true)" class="button"><a href="/">
           <div v-if="isLoading" class="lds-ellipsis">
             <div></div>
             <div></div>
