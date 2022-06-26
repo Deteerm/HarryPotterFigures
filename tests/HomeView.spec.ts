@@ -1,6 +1,6 @@
 import { expect } from "chai";
 
-describe("Dummy dwa", () => {
+describe("Dummy test for HomeView", () => {
   it("should pass", () => {
     expect(true).to.be.true;
   });
