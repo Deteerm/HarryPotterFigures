@@ -3,16 +3,11 @@ import Figure from '@/components/Figure.vue'
 import { RouterLink } from "vue-router"
 import { useStore } from '@/stores/figures'
 import { ref } from 'vue'
-import { useRouter } from 'vue-router'
 
 import type { State } from '@/stores/figures'
 import type { Ref } from 'vue'
-import type { Router } from 'vue-router'
 
 const store: State = useStore()
-const router: Router = useRouter()
-
-if (store.figures.length === 0) router.push('/')
 
 const selectedFigureRef: Ref<number | null> = ref(null)
 

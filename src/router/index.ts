@@ -1,8 +1,10 @@
 import { createRouter, createWebHistory } from "vue-router";
+import { useStore } from "@/stores/figures";
 import HomeView from "@/views/HomeView.vue";
-
 import ShipmentView from "@/views/ShipmentView.vue";
 import FiguresView from "@/views/FiguresView.vue";
+
+import type { State } from "@/stores/figures";
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -16,14 +18,23 @@ const router = createRouter({
       path: "/figures",
       name: "figures",
       component: FiguresView,
+      beforeEnter: () => {
+        const store: State = useStore();
+        if (store.figures.length === 0) {
+          return { name: "home" };
+        }
+      },
     },
     {
       path: "/shipment",
       name: "shipment",
-      // route level code-splitting
-      // this generates a separate chunk (About.[hash].js) for this route
-      // which is lazy-loaded when the route is visited.
       component: ShipmentView,
+      beforeEnter: () => {
+        const store: State = useStore();
+        if (store.selectedFigureSetNum === "") {
+          return { name: "home" };
+        }
+      },
     },
     {
       path: "/:pathMatch(.*)*",
