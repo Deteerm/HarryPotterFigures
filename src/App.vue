@@ -39,7 +39,7 @@ body {
   box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.5);
   background-color: rgb(52, 129, 201);
   border: none;
-  margin: 10px auto;
+  margin: 2rem auto 10px auto;
   display: block;
   min-width: 168px;
 }

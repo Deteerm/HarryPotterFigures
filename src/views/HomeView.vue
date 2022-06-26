@@ -3,6 +3,7 @@ import pickRandomResults from '@/utils/pickRandomResults'
 import { useStore } from '@/stores/figures'
 import { useRouter } from 'vue-router'
 import { ref } from 'vue'
+import type FigureType from '@/types/FigureType'
 
 const API_KEY = import.meta.env.VITE_API_KEY
 
@@ -12,12 +13,12 @@ const router = useRouter()
 const isError = ref(false)
 const isLoading = ref(false)
 
-const fetchFigures = async () => {
+const fetchFigures = async (): Promise<void> => {
   try {
     setIsLoading(true)
-    const data = await fetch(`https://rebrickable.com/api/v3/lego/minifigs/?page_size=500&in_theme_id=246&key=${API_KEY}`)
+    const data: Response = await fetch(`https://rebrickable.com/api/v3/lego/minifigs/?page_size=500&in_theme_id=246&key=${API_KEY}`)
     const { results } = await data.json()
-    const randomFigures = pickRandomResults(results, 3)
+    const randomFigures: Array<FigureType> = pickRandomResults(results, 3)
     store.figures = randomFigures
     setIsLoading(false)
     router.push('/figures')
@@ -62,7 +63,4 @@ const setIsLoading = (bool: boolean): void => {
 </template>
 
 <style scoped>
-.button {
-  margin-top: 2rem;
-}
 </style>

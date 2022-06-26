@@ -1,7 +1,8 @@
 import { defineStore } from "pinia";
+import type FigureType from "@/types/FigureType";
 
-interface State {
-  figures: any[];
+export interface State {
+  figures: FigureType[];
 }
 
 export const useStore = defineStore({
