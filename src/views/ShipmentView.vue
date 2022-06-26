@@ -95,29 +95,25 @@ const formFilledCorrectly = computed((): boolean => {
 })
 
 const submit = async (): Promise<void> => {
-  try {
-    isLoading.value = true
 
-    await fakeFetch('/fake/rest/api-service', {
-      name: name.value,
-      surnname: surnname.value,
-      phoneNumber: phoneNumber.value,
-      birthDate: birthDate.value,
-      address: address.value,
-      city: city.value,
-      state: state.value,
-      zipCode: zipCode.value
-    })
+  isLoading.value = true
 
-    isLoading.value = false
+  await fakeFetch('/fake/rest/api-service', {
+    name: name.value,
+    surnname: surnname.value,
+    phoneNumber: phoneNumber.value,
+    birthDate: birthDate.value,
+    address: address.value,
+    city: city.value,
+    state: state.value,
+    zipCode: zipCode.value
+  })
 
-    store.$reset()
-    store.homePageMsg = "Thank you for your order!"
-    router.push('/')
-  } catch (e) {
-    console.error(e)
-    //@TODO redirect to errorpage
-  }
+  isLoading.value = false
+
+  store.$reset()
+  store.homePageMsg = "Thank you for your order!"
+  router.push('/')
 }
 </script>
 
