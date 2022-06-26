@@ -13,7 +13,9 @@ const selectedFigureRef: Ref<number | null> = ref(null)
 
 const selectFigure = (index: number): void => {
   selectedFigureRef.value = index
-  store.selectedFigureSetNum = store.figures[index].set_num
+  store.selectedFigure.setNum = store.figures[index].set_num
+  store.selectedFigure.setImgUrl = store.figures[index].set_img_url
+  store.selectedFigure.name = store.figures[index].name
 }
 </script>
 

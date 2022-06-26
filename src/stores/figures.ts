@@ -3,13 +3,23 @@ import type FigureType from "@/types/FigureType";
 
 export interface State {
   figures: FigureType[];
-  selectedFigureSetNum: string;
+  selectedFigure: {
+    setNum: string;
+    setImgUrl: string;
+    name: string;
+  };
+  homePageMsg: string;
 }
 
 export const useStore = defineStore({
   id: "figures",
   state: (): State => ({
     figures: [],
-    selectedFigureSetNum: "",
+    selectedFigure: {
+      setNum: "",
+      setImgUrl: "",
+      name: "",
+    },
+    homePageMsg: "",
   }),
 });

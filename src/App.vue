@@ -1,5 +1,14 @@
 <script setup lang="ts">
 import { RouterView } from 'vue-router'
+import { onErrorCaptured } from 'vue'
+import { useRouter } from 'vue-router'
+
+const router = useRouter()
+
+onErrorCaptured((e: Error) => {
+  console.error(e)
+  router.push('/error')
+})
 </script>
 
 <template>
@@ -10,7 +19,6 @@ import { RouterView } from 'vue-router'
 @import '@/assets/base.css';
 
 #app {
-  max-width: 1280px;
   margin: 0 auto;
   padding: 2rem;
   font-weight: normal;
@@ -126,5 +134,17 @@ a,
   100% {
     transform: translate(24px, 0);
   }
+}
+
+.mb-3 {
+  margin-bottom: 3rem;
+}
+
+.mb-4 {
+  margin-bottom: 3rem;
+}
+
+.mt-8 {
+  margin-top: 8rem;
 }
 </style>
