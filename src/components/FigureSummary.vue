@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { useStore, type State } from '@/stores/figures'
-import { ref, type Ref } from 'vue'
+import { ref } from 'vue'
 
 const store: State = useStore()
 const API_KEY = import.meta.env.VITE_API_KEY
