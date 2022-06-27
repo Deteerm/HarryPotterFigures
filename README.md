@@ -23,6 +23,8 @@ See [Vite Configuration Reference](https://vitejs.dev/config/).
 
 ## Project Setup
 
+For the application to work you will need to provide your API key for the https://rebrickable.com/api/ in the .env file
+
 ```sh
 npm install
 ```
