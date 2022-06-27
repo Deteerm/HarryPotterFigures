@@ -1,13 +1,11 @@
 <script setup lang="ts">
 import { useStore, type State } from '@/stores/figures'
-import { ref } from 'vue'
 
 const store: State = useStore()
 const API_KEY = import.meta.env.VITE_API_KEY
 
 const data: Response = await fetch(`https://rebrickable.com/api/v3/lego/minifigs/${store.selectedFigure.setNum}/parts/?key=${API_KEY}`)
-const figureDetialsJSON = await data.json()
-const figureDetials = ref(figureDetialsJSON)
+const figureDetials = await data.json()
 
 const calculateText = (name: string): string => {
   return name.length > 34 ? name.slice(0, 34).trim() + '...' : name
