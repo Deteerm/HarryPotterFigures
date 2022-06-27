@@ -99,14 +99,16 @@ const submit = async (): Promise<void> => {
   isLoading.value = true
 
   await fakeFetch('/fake/rest/api-service', {
-    name: name.value,
-    surnname: surnname.value,
-    phoneNumber: phoneNumber.value,
-    birthDate: birthDate.value,
-    address: address.value,
-    city: city.value,
-    state: state.value,
-    zipCode: zipCode.value
+    method: 'POST', body: JSON.stringify({
+      name: name.value,
+      surnname: surnname.value,
+      phoneNumber: phoneNumber.value,
+      birthDate: birthDate.value,
+      address: address.value,
+      city: city.value,
+      state: state.value,
+      zipCode: zipCode.value
+    })
   })
 
   isLoading.value = false

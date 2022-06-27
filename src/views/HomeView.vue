@@ -40,8 +40,10 @@ const setIsLoading = (bool: boolean): void => {
           <div></div>
           <div></div>
         </div>
-        <span v-if="store.homePageMsg">GO AGAIN?</span>
-        <span v-else>LET'S GO</span>
+        <span v-else>
+          <span v-if="store.homePageMsg">GO AGAIN?</span>
+          <span v-else>LET'S GO</span>
+        </span>
       </button>
     </div>
   </section>
