@@ -1,10 +1,10 @@
 export default function fakeFetch(
   fakeUrl: string,
-  payload: object
+  options: object
 ): Promise<void> {
   return new Promise<void>((resolve, reject) => {
     setTimeout(() => {
-      console.log(payload);
+      console.log(options);
       console.log("Response status: 200 OK");
       resolve();
     }, 1000);
