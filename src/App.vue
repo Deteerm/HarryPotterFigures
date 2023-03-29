@@ -12,7 +12,8 @@ onErrorCaptured((e: Error) => {
 </script>
 
 <template>
-  <RouterView />
+  <!-- <RouterView /> -->
+  <h1>Zapraszamy 31.03</h1>
 </template>
 
 <style>
